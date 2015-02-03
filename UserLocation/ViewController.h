@@ -13,6 +13,10 @@ static const NSInteger kTagLabel = 2;
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UIButton *button;
+
+- (IBAction)buttonTouchUpInside:(id)sender;
 
 @end
 
