@@ -14,6 +14,7 @@
 		364C598F1A80FB87001EF2FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364C598E1A80FB87001EF2FD /* Images.xcassets */; };
 		364C59921A80FB87001EF2FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364C59901A80FB87001EF2FD /* LaunchScreen.xib */; };
 		364C599E1A80FB87001EF2FD /* UserLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 364C599D1A80FB87001EF2FD /* UserLocationTests.m */; };
+		364C59A81A8115FA001EF2FD /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 364C59A71A8115FA001EF2FD /* ViewControllerTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		364C59971A80FB87001EF2FD /* UserLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		364C599C1A80FB87001EF2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364C599D1A80FB87001EF2FD /* UserLocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLocationTests.m; sourceTree = "<group>"; };
+		364C59A71A8115FA001EF2FD /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				364C599D1A80FB87001EF2FD /* UserLocationTests.m */,
+				364C59A71A8115FA001EF2FD /* ViewControllerTest.m */,
 				364C599B1A80FB87001EF2FD /* Supporting Files */,
 			);
 			path = UserLocationTests;
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364C59A81A8115FA001EF2FD /* ViewControllerTest.m in Sources */,
 				364C599E1A80FB87001EF2FD /* UserLocationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +420,7 @@
 				364C59A31A80FB87001EF2FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		364C59A41A80FB87001EF2FD /* Build configuration list for PBXNativeTarget "UserLocationTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				364C59A61A80FB87001EF2FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
