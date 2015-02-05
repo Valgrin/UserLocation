@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "ViewController.h"
+#import "CountryView.h"
 
 @interface ViewControllerTest : XCTestCase
 
@@ -21,7 +22,7 @@
 - (void)setUp
 {
     [super setUp];
-    self.controller = [[UIStoryboard storyboardWithName: @"Main" bundle: nil]instantiateViewControllerWithIdentifier: @"ViewController"];
+    self.controller = [[ViewController alloc] init];
 }
 
 - (void)tearDown
@@ -39,21 +40,19 @@
                            forControlEvent: UIControlEventTouchUpInside].count == 1);
 }
 
-- (void)testControllerShouldInitTheLabel
+- (void)testControllerShouldInitTheCountryView
 {
-    UILabel *label = (UILabel *)[self.controller.view viewWithTag: kTagLabel];
-    XCTAssertTrue([label isKindOfClass: [UILabel class]]);
-    XCTAssertTrue([label.text isEqualToString: @""]);
+    CountryView *countryView = (CountryView *)[self.controller.view viewWithTag: kTagCountryView];
+    XCTAssertTrue([countryView isKindOfClass: [CountryView class]]);
+    XCTAssertNil(countryView.placemark);
 }
 
 - (void)testTappingOnButtonShouldChangeTheLabel
 {
     UIButton *button = (UIButton *)[self.controller.view viewWithTag: kTagButton];
-    UILabel *label = (UILabel *)[self.controller.view viewWithTag: kTagLabel];
-    NSString *oldLabel = label.text;
+    CountryView *countryView = (CountryView *)[self.controller.view viewWithTag: kTagCountryView];
     [button sendActionsForControlEvents: UIControlEventTouchUpInside];
-    NSString *newLabel = label.text;
-    XCTAssertFalse([oldLabel isEqualToString: newLabel]);
+    XCTAssertNotNil(countryView.placemark);
 }
 
 

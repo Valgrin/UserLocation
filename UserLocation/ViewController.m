@@ -67,6 +67,7 @@
     if (_countryView == nil)
     {
         _countryView = [[CountryView alloc] init];
+        [_countryView setTag: kTagCountryView];
         [_countryView setNeedsLayout];
     }
     return _countryView;
@@ -76,13 +77,26 @@
 
 - (void)buttonTouchUpInside:(id)sender
 {
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder reverseGeocodeLocation: self.userLocation completionHandler:^(NSArray *placemarks, NSError *error)
+    if (self.userLocation)
     {
-        [self.countryView setPlacemark: [placemarks lastObject]];
-        [self.countryView setNeedsLayout];
-    }];
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder reverseGeocodeLocation: self.userLocation completionHandler:^(NSArray *placemarks, NSError *error)
+         {
+             if (!error)
+             {
+                 [self.countryView setPlacemark: [placemarks lastObject]];
+                 [self.countryView setNeedsLayout];
+             }
+             else
+             {
+                 NSLog(@"Error: %@", error.localizedDescription);
+             }
+         }];
+    }
+    else
+    {
+        NSLog(@"No user location");
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate

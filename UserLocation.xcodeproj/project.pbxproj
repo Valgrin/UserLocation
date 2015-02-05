@@ -17,6 +17,7 @@
 		AC2F2EDD1A837C99005475C4 /* CountryView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2EDC1A837C99005475C4 /* CountryView.m */; };
 		AC2F2EE01A837E66005475C4 /* Flags.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2EDF1A837E66005475C4 /* Flags.m */; };
 		ACDDEF861A8390DD00752084 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDDEF851A8390DD00752084 /* CoreLocation.framework */; };
+		ACDDEF8B1A83965400752084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDDEF8A1A83965400752084 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		AC2F2EDE1A837E66005475C4 /* Flags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flags.h; sourceTree = "<group>"; };
 		AC2F2EDF1A837E66005475C4 /* Flags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flags.m; sourceTree = "<group>"; };
 		ACDDEF851A8390DD00752084 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ACDDEF8A1A83965400752084 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDDEF8B1A83965400752084 /* Foundation.framework in Frameworks */,
 				ACDDEF861A8390DD00752084 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +75,7 @@
 		364C59751A80FB87001EF2FD = {
 			isa = PBXGroup;
 			children = (
+				ACDDEF8A1A83965400752084 /* Foundation.framework */,
 				364C59801A80FB87001EF2FD /* UserLocation */,
 				364C599A1A80FB87001EF2FD /* UserLocationTests */,
 				364C597F1A80FB87001EF2FD /* Products */,

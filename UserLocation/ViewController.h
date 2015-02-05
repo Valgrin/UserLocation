@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 static const NSInteger kTagButton = 1;
-static const NSInteger kTagLabel = 2;
+static const NSInteger kTagCountryView = 2;
 
 @interface ViewController : UIViewController
 
