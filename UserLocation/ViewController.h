@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 static const NSInteger kTagButton = 1;
 static const NSInteger kTagLabel = 2;
