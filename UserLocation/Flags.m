@@ -16,7 +16,9 @@
     NSData *data = [NSData dataWithContentsOfURL: url];
     UIImage *img = [[UIImage alloc] initWithData: data];
     if (img == nil)
+    {
         return [Flags defaultImageFlag];
+    }
     return img;
 }
 
