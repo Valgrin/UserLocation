@@ -20,7 +20,6 @@
     ViewController *controller = [[ViewController alloc] init];
     
     [self.window setRootViewController: controller];
-    // Override point for customization after application launch.
     return YES;
 }
 
