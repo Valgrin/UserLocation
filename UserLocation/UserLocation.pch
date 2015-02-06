@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  UserLocation
+//
+//  Created by Guest User on 06/02/15.
+//  Copyright (c) 2015 Thomas LEVY. All rights reserved.
+//
+
+#ifndef UserLocation_PrefixHeader_pch
+#define UserLocation_PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <Foundation/Foundation.h>
+
+#import "TestConstants.h"
+
+#endif

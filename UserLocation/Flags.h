@@ -6,9 +6,6 @@
 //  Copyright (c) 2015 Thomas LEVY. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 @interface Flags : NSObject
 
 + (UIImage *)flagImageWithISOCountryCode: (NSString *)countryCode;

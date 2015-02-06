@@ -49,6 +49,7 @@
     {
         _countryLabel = [[UILabel alloc] init];
         [_countryLabel setText: @"None"];
+        [_countryLabel setTag: kTagCountryViewLabel];
         [_countryLabel sizeToFit];
     }
     return _countryLabel;
@@ -59,6 +60,7 @@
     if (_flag == nil)
     {
         _flag = [[UIImageView alloc] initWithImage: [Flags flagImageWithISOCountryCode: self.placemark.ISOcountryCode]];
+        [_flag setTag: kTagCountryViewFlag];
     }
     return _flag;
 }

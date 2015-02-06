@@ -18,6 +18,7 @@
 		AC2F2EE01A837E66005475C4 /* Flags.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2EDF1A837E66005475C4 /* Flags.m */; };
 		ACD90C561A84AD0500748426 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD90C551A84AD0500748426 /* UIKit.framework */; };
 		ACD90C581A84AD7F00748426 /* FlagsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD90C571A84AD7F00748426 /* FlagsTest.m */; };
+		ACD90C5A1A84AF1800748426 /* CountryViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD90C591A84AF1800748426 /* CountryViewTest.m */; };
 		ACDDEF861A8390DD00752084 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDDEF851A8390DD00752084 /* CoreLocation.framework */; };
 		ACDDEF8B1A83965400752084 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDDEF8A1A83965400752084 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,9 @@
 		AC2F2EDF1A837E66005475C4 /* Flags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flags.m; sourceTree = "<group>"; };
 		ACD90C551A84AD0500748426 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ACD90C571A84AD7F00748426 /* FlagsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagsTest.m; sourceTree = "<group>"; };
+		ACD90C591A84AF1800748426 /* CountryViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryViewTest.m; sourceTree = "<group>"; };
+		ACD90C5B1A84AFCD00748426 /* TestConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConstants.h; sourceTree = "<group>"; };
+		ACD90C5C1A84B40A00748426 /* UserLocation.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLocation.pch; sourceTree = "<group>"; };
 		ACDDEF851A8390DD00752084 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ACDDEF8A1A83965400752084 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -101,6 +105,7 @@
 		364C59801A80FB87001EF2FD /* UserLocation */ = {
 			isa = PBXGroup;
 			children = (
+				ACD90C5B1A84AFCD00748426 /* TestConstants.h */,
 				364C59851A80FB87001EF2FD /* AppDelegate.h */,
 				364C59861A80FB87001EF2FD /* AppDelegate.m */,
 				364C59881A80FB87001EF2FD /* ViewController.h */,
@@ -112,6 +117,7 @@
 				AC2F2EDC1A837C99005475C4 /* CountryView.m */,
 				AC2F2EDE1A837E66005475C4 /* Flags.h */,
 				AC2F2EDF1A837E66005475C4 /* Flags.m */,
+				ACD90C5C1A84B40A00748426 /* UserLocation.pch */,
 			);
 			path = UserLocation;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 				364C599D1A80FB87001EF2FD /* UserLocationTests.m */,
 				364C59A71A8115FA001EF2FD /* ViewControllerTest.m */,
 				ACD90C571A84AD7F00748426 /* FlagsTest.m */,
+				ACD90C591A84AF1800748426 /* CountryViewTest.m */,
 				364C599B1A80FB87001EF2FD /* Supporting Files */,
 			);
 			path = UserLocationTests;
@@ -258,6 +265,7 @@
 				ACD90C581A84AD7F00748426 /* FlagsTest.m in Sources */,
 				364C59A81A8115FA001EF2FD /* ViewControllerTest.m in Sources */,
 				364C599E1A80FB87001EF2FD /* UserLocationTests.m in Sources */,
+				ACD90C5A1A84AF1800748426 /* CountryViewTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = UserLocation/UserLocation.pch;
 				INFOPLIST_FILE = UserLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -376,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = UserLocation/UserLocation.pch;
 				INFOPLIST_FILE = UserLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -391,6 +401,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = UserLocation/UserLocation.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -410,6 +421,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = UserLocation/UserLocation.pch;
 				INFOPLIST_FILE = UserLocationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
