@@ -46,13 +46,4 @@
     XCTAssertNil(countryView.placemark);
 }
 
-- (void)testTappingOnButtonShouldChangeTheLabel
-{
-    UIButton *button = (UIButton *)[self.controller.view viewWithTag: kTagButton];
-    CountryView *countryView = (CountryView *)[self.controller.view viewWithTag: kTagCountryView];
-    [button sendActionsForControlEvents: UIControlEventTouchUpInside];
-    XCTAssertNotNil(countryView.placemark);
-}
-
-
 @end

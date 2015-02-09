@@ -12,7 +12,6 @@
 		364C598A1A80FB87001EF2FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364C59891A80FB87001EF2FD /* ViewController.m */; };
 		364C598F1A80FB87001EF2FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364C598E1A80FB87001EF2FD /* Images.xcassets */; };
 		364C59921A80FB87001EF2FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364C59901A80FB87001EF2FD /* LaunchScreen.xib */; };
-		364C599E1A80FB87001EF2FD /* UserLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 364C599D1A80FB87001EF2FD /* UserLocationTests.m */; };
 		364C59A81A8115FA001EF2FD /* ViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 364C59A71A8115FA001EF2FD /* ViewControllerTest.m */; };
 		AC2F2EDD1A837C99005475C4 /* CountryView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2EDC1A837C99005475C4 /* CountryView.m */; };
 		AC2F2EE01A837E66005475C4 /* Flags.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2F2EDF1A837E66005475C4 /* Flags.m */; };
@@ -45,7 +44,6 @@
 		364C59911A80FB87001EF2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		364C59971A80FB87001EF2FD /* UserLocationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserLocationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		364C599C1A80FB87001EF2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		364C599D1A80FB87001EF2FD /* UserLocationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserLocationTests.m; sourceTree = "<group>"; };
 		364C59A71A8115FA001EF2FD /* ViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTest.m; sourceTree = "<group>"; };
 		AC2F2EDB1A837C99005475C4 /* CountryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryView.h; sourceTree = "<group>"; };
 		AC2F2EDC1A837C99005475C4 /* CountryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryView.m; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		364C599A1A80FB87001EF2FD /* UserLocationTests */ = {
 			isa = PBXGroup;
 			children = (
-				364C599D1A80FB87001EF2FD /* UserLocationTests.m */,
 				364C59A71A8115FA001EF2FD /* ViewControllerTest.m */,
 				ACD90C571A84AD7F00748426 /* FlagsTest.m */,
 				ACD90C591A84AF1800748426 /* CountryViewTest.m */,
@@ -264,7 +261,6 @@
 			files = (
 				ACD90C581A84AD7F00748426 /* FlagsTest.m in Sources */,
 				364C59A81A8115FA001EF2FD /* ViewControllerTest.m in Sources */,
-				364C599E1A80FB87001EF2FD /* UserLocationTests.m in Sources */,
 				ACD90C5A1A84AF1800748426 /* CountryViewTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
