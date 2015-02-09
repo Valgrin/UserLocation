@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIButton *localizeButton;
 @property (nonatomic, strong) CountryView *countryView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, assign) BOOL displayCountry;
 
 @end
 
@@ -27,19 +28,6 @@
     [self.view addSubview: self.countryView];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager setDelegate: self];
-    
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-    {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    [self.locationManager startUpdatingLocation];
-}
-
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
@@ -49,12 +37,26 @@
 
 #pragma mark - Accessors
 
+- (CLLocationManager *)locationManager
+{
+    if (_locationManager == nil)
+    {
+        _locationManager = [[CLLocationManager alloc] init];
+        [_locationManager setDelegate: self];
+        if ([_locationManager respondsToSelector: @selector(requestWhenInUseAuthorization)])
+        {
+            [_locationManager requestWhenInUseAuthorization];
+        }
+    }
+    return _locationManager;
+}
+
 - (UIButton *)localizeButton
 {
     if (_localizeButton == nil)
     {
         _localizeButton = [UIButton buttonWithType: UIButtonTypeCustom];
-        [_localizeButton setTitle: @"Get Country" forState: UIControlStateNormal];
+        [_localizeButton setTitle: @"Localize" forState: UIControlStateNormal];
         [_localizeButton setBackgroundColor: [UIColor grayColor]];
         [_localizeButton addTarget: self action: @selector(buttonTouchUpInside:) forControlEvents: UIControlEventTouchUpInside];
         [_localizeButton setTag: kTagButton];
@@ -74,29 +76,39 @@
     return _countryView;
 }
 
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation: [locations lastObject] completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         if (!error)
+         {
+             [self.countryView setPlacemark: [placemarks lastObject]];
+             [self.countryView setNeedsLayout];
+         }
+         else
+         {
+             NSLog(@"Error: %@", error.localizedDescription);
+         }
+     }];
+}
+
 #pragma mark - Actions
 
 - (void)buttonTouchUpInside:(id)sender
 {
-    if (self.locationManager.location)
+    self.displayCountry = !self.displayCountry;
+    if (self.displayCountry)
     {
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation: self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error)
-         {
-             if (!error)
-             {
-                 [self.countryView setPlacemark: [placemarks lastObject]];
-                 [self.countryView setNeedsLayout];
-             }
-             else
-             {
-                 NSLog(@"Error: %@", error.localizedDescription);
-             }
-         }];
+        [self.locationManager startUpdatingLocation];
     }
     else
     {
-        NSLog(@"No user location");
+        [self.locationManager stopUpdatingLocation];
+        [self.countryView setPlacemark: nil];
+        [self.countryView setNeedsLayout];
     }
 }
 

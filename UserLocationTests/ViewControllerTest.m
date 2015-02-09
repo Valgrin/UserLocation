@@ -34,7 +34,7 @@
 {
     UIButton *button = (UIButton *)[self.controller.view viewWithTag: kTagButton];
     XCTAssertTrue([button isKindOfClass: [UIButton class]]);
-    XCTAssertTrue([button.titleLabel.text isEqualToString: @"Get Country"]);
+    XCTAssertTrue([button.titleLabel.text isEqualToString: @"Localize"]);
     XCTAssertTrue([button actionsForTarget: self.controller
                            forControlEvent: UIControlEventTouchUpInside].count == 1);
 }
