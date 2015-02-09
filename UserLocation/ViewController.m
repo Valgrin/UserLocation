@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) UIButton *localizeButton;
 @property (nonatomic, strong) CountryView *countryView;
-@property (nonatomic, strong) CLLocation *userLocation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -22,7 +22,7 @@
 - (void)loadView
 {
     [super loadView];
-    [self.view setBackgroundColor: [UIColor redColor]];
+    [self.view setBackgroundColor: [UIColor whiteColor]];
     [self.view addSubview: self.localizeButton];
     [self.view addSubview: self.countryView];
 }
@@ -30,14 +30,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    [locationManager setDelegate: self];
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate: self];
     
-    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
     {
-        [locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestWhenInUseAuthorization];
     }
-    [locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)viewWillLayoutSubviews
@@ -55,6 +55,7 @@
     {
         _localizeButton = [UIButton buttonWithType: UIButtonTypeCustom];
         [_localizeButton setTitle: @"Get Country" forState: UIControlStateNormal];
+        [_localizeButton setBackgroundColor: [UIColor grayColor]];
         [_localizeButton addTarget: self action: @selector(buttonTouchUpInside:) forControlEvents: UIControlEventTouchUpInside];
         [_localizeButton setTag: kTagButton];
         [_localizeButton sizeToFit];
@@ -77,10 +78,10 @@
 
 - (void)buttonTouchUpInside:(id)sender
 {
-    if (self.userLocation)
+    if (self.locationManager.location)
     {
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation: self.userLocation completionHandler:^(NSArray *placemarks, NSError *error)
+        [geocoder reverseGeocodeLocation: self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error)
          {
              if (!error)
              {
@@ -97,13 +98,6 @@
     {
         NSLog(@"No user location");
     }
-}
-
-#pragma mark - CLLocationManagerDelegate
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    self.userLocation = [locations lastObject];
 }
 
 @end

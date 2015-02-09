@@ -37,7 +37,7 @@
     self.countryLabel.frame = CGRectMake(self.flag.frame.size.width, 0, self.countryLabel.frame.size.width, self.countryLabel.frame.size.height);
     CGRect viewFrame = self.frame;
     viewFrame.size.height = viewHeight;
-    viewFrame.size.width = self.frame.size.width + self.countryLabel.frame.size.width;
+    viewFrame.size.width = self.flag.frame.size.width + self.countryLabel.frame.size.width;
     self.frame = viewFrame;
 }
 
