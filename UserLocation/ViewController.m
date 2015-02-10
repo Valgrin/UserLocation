@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIButton *localizeButton;
 @property (nonatomic, strong) CountryView *countryView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLGeocoder *geocoder;
 @property (nonatomic, assign) BOOL displayCountry;
 
 @end
@@ -76,12 +77,21 @@
     return _countryView;
 }
 
+- (CLGeocoder *)geocoder
+{
+    if (_geocoder == nil)
+    {
+        _geocoder = [[CLGeocoder alloc] init];
+    }
+    return _geocoder;
+}
+
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation: [locations lastObject] completionHandler:^(NSArray *placemarks, NSError *error)
+    [self.geocoder reverseGeocodeLocation: [locations lastObject]
+                        completionHandler: ^(NSArray *placemarks, NSError *error)
      {
          if (!error)
          {
