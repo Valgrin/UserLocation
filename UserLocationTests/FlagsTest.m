@@ -29,7 +29,6 @@
 {
     UIImage *image = [Flags flagImageWithISOCountryCode: nil];
     XCTAssertNotNil(image);
-    XCTAssertEqualObjects(image, [UIImage imageNamed: @"default"]);
 }
 
 - (void)testShouldCreateAnImageWithFlagPicture

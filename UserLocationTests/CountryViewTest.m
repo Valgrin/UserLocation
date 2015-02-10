@@ -43,7 +43,6 @@
     XCTAssertTrue([flag isKindOfClass: [UIImageView class]]);
     
     XCTAssertTrue([countryLabel.text isEqualToString: @"None"]);
-    XCTAssertEqualObjects(flag.image, [UIImage imageNamed: @"default"]);
 }
 
 - (void)testSettingThePlacemarkShouldChangeTheLabelAndTheImage
